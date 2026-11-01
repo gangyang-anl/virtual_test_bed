@@ -8,10 +8,10 @@
 # Source: https://github.com/idaholab/virtual_test_bed/tree/main/lfr/nacie
 # Documentation: https://mooseframework.inl.gov/virtual_test_bed/lfr/nacie/nacie.html
 
-flow_area = 654.1503e-6  
+flow_area = 654.1503e-6
 mass_flux_in = ${fparse 2.5595/flow_area} #experimental data
-P_out = 8.356458e+05 
-T_in = 498.3 
+P_out = 8.356458e+05
+T_in = 498.3
 
 [TriSubChannelMesh]
   [subchannel]
@@ -72,10 +72,10 @@ T_in = 498.3
   [mu]
     block = subchannel
   []
-  [dmT] 
+  [dmT]
     block = subchannel
   []
-  [dmh] 
+  [dmh]
     block = subchannel
   []
   [displacement]
@@ -558,7 +558,7 @@ T_in = 498.3
   type = Transient
 
   start_time = -10000
-  end_time = 8000 
+  end_time = 8000
   dtmax = 50
 
   [TimeStepper]
@@ -576,7 +576,7 @@ T_in = 498.3
 [Outputs]
   perf_graph = true
   [out]
-    type = Checkpoint        
+    type = Checkpoint
   []
   [console]
     type = Console

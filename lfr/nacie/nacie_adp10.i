@@ -18,7 +18,7 @@ u_init_hx = ${fparse u_ref}
 
 u_init_fm = ${fparse u_init*16}
 
-u_shell = 0.039368 
+u_shell = 0.039368
 
 T_inlet_shell = 443.15
 
@@ -76,9 +76,9 @@ T_inlet_shell = 443.15
 
   [S316_hx]
     type = SolidMaterialProps
-    k = 2.053  
+    k = 2.053
     Cp = 538.5
-    rho = 7817.0 
+    rho = 7817.0
   []
 
   [insulation]
@@ -137,8 +137,8 @@ T_inlet_shell = 443.15
   [head_function]
     type=PiecewiseLinear
 
-    x = '-100000           1225        1245 6000'        
-    y = '30686.99926  30686.99926      0 0'           
+    x = '-100000           1225        1245 6000'
+    y = '30686.99926  30686.99926      0 0'
   []
 
   [q_fn]
@@ -194,7 +194,7 @@ T_inlet_shell = 443.15
         wall_thickness = '0.00516 0.05'
         n_wall_elems = '4 4'
         material_wall = 'S304 insulation'
-        HS_BC_type = Convective 
+        HS_BC_type = Convective
         h_amb = 5.0
         HT_surface_area_density = 63.816 # 4/D
         n_elems = 20
@@ -210,12 +210,12 @@ T_inlet_shell = 443.15
         Dh = 0.06268
         hs_type = cylinder
         radius_i = 0.03134
-        heat_source_solid = '0'
+        heat_source_solid = '0 0'
         dim_wall = 2
         wall_thickness = '0.05 0.05'
         n_wall_elems = '4 4'
         material_wall = 'S304 insulation'
-        HS_BC_type = Convective 
+        HS_BC_type = Convective
         h_amb = 5.0
         HT_surface_area_density = 63.816 # 4/D
         n_elems = 20
@@ -256,7 +256,7 @@ T_inlet_shell = 443.15
         wall_thickness = '0.0033'
         n_wall_elems = 2
         material_wall = 'S304'
-        HS_BC_type = Adiabatic 
+        HS_BC_type = Adiabatic
         T_wall = 2.981500e+02
         HT_surface_area_density = 150.12197 # 4/D
         n_elems = 20
@@ -278,15 +278,15 @@ T_inlet_shell = 443.15
         HoD = 40
         WF_geometry_type  = WireWrap
         hs_type = cylinder
-        radius_i = 0.03134 
+        radius_i = 0.03134
         Twall_init = 510
         heat_source_solid = '0'
         dim_wall = 2
-        wall_thickness = '0.00516' 
+        wall_thickness = '0.00516'
         n_wall_elems = '4'
         material_wall = 'S304'
         T_wall = 2.981500e+02
-        HT_surface_area_density = 610.687 
+        HT_surface_area_density = 610.687
         n_elems = 20
         HTC_geometry_type = Pipe
         fluid_conduction = true
@@ -403,12 +403,12 @@ T_inlet_shell = 443.15
    inputs = 'riser_P103_pump(out)'
    outputs = 'riser_P104(in)'
    K = '0 0.46'
-   Area = 654.1503e-6 
+   Area = 654.1503e-6
    initial_V = ${u_init_fm}
    initial_P = 701193.2
    initial_T = 577.7198
    eos = LBE_eos
-   Head = head_function   
+   Head = head_function
  []
 
    [riser_P104]
@@ -505,7 +505,7 @@ T_inlet_shell = 443.15
     radius_i          = 0.105
     heat_source_solid = '0'
     dim_wall          = 2
-    wall_thickness    = '0.03'  
+    wall_thickness    = '0.03'
     n_wall_elems      = '4'
     material_wall     = 'S304'
     HT_surface_area_density = 19.047
@@ -580,7 +580,7 @@ T_inlet_shell = 443.15
     initial_T = 574.0223
   []
 
-  [HX_inactive] 
+  [HX_inactive]
     type = PBPipe
     A                 = 0.0215996 #m^2
     Dh                = 0.06268 #m
@@ -601,7 +601,7 @@ T_inlet_shell = 443.15
 
     orientation       = '0 -1 0'
     position          = '2.4 7.179 0'
-    length            = 0.7 
+    length            = 0.7
     n_elems           = 20
     initial_P         = 268634.5
     initial_T         = 573.9854
@@ -618,7 +618,7 @@ T_inlet_shell = 443.15
     eos = LBE_eos
   []
 
-  [HX_active] 
+  [HX_active]
     type = PBHeatExchanger
     eos = water_eos
     eos_secondary = LBE_eos
@@ -652,7 +652,7 @@ T_inlet_shell = 443.15
     wall_thickness = 0.01310
 
     dim_wall = 1
-    material_wall = 'S316_hx'  
+    material_wall = 'S316_hx'
     n_wall_elems = 4
   []
 
@@ -755,7 +755,7 @@ T_inlet_shell = 443.15
     initial_V = ${u_init_fm}
     initial_P = 957713.7
     initial_T = 496.4035
-    heat_source       = q_tfm  
+    heat_source       = q_tfm
   []
 
   [FM_branch]
@@ -850,7 +850,7 @@ T_inlet_shell = 443.15
     type = PBBranch
     inputs = 'pipe_lower_1(out)'
     outputs = 'FA_active(in)'
-    K = '0.0 16.13'   
+    K = '0.0 16.13'
     Area = 3.0856e-03
     eos = LBE_eos
     initial_P = 949600.6
@@ -876,7 +876,7 @@ T_inlet_shell = 443.15
     type  = PBTDV
     input = 'set_pressure(out)'
     eos  = LBE_eos
-    p_bc = 1.4e+05 
+    p_bc = 1.4e+05
     T_bc = 6.632870e+02
   []
 
@@ -892,7 +892,7 @@ T_inlet_shell = 443.15
     type              = PBTDV
     input             = 'HX_active(primary_in)'
     eos               = water_eos
-    T_bc = ${T_inlet_shell} 
+    T_bc = ${T_inlet_shell}
     p_bc = 1.0e5
   []
 
@@ -967,12 +967,12 @@ T_inlet_shell = 443.15
   []
 
   [heat_removal_tube]
-    type = HeatExchangerHeatRemovalRate
+    type = ConjugateTransferIntegral
     block=HX_active:secondary_pipe
     heated_perimeter = 1.3784
   []
   [heat_removal_shell]
-    type = HeatExchangerHeatRemovalRate
+    type = ConjugateTransferIntegral
     block=HX_active:primary_pipe
     heated_perimeter = 1.9550
   []
@@ -1178,7 +1178,7 @@ T_inlet_shell = 443.15
   fixed_point_max_its = 10
 
   start_time = -10000.0
-  end_time = 6300 
+  end_time = 6300
 
   [TimeStepper]
     type = IterationAdaptiveDT
