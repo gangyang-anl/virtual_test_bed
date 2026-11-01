@@ -7,4 +7,13 @@
     capabilities = samapp
     requirement = 'The system shall parse the coupled NACIE ADP10 SAM and SCM model with one SCM child application.'
   []
+
+  [regression]
+    type = CSVDiff
+    input = nacie_adp10.i
+    csvdiff = 'nacie_adp10_csv.csv nacie_adp10_out_sub_app0_csv.csv'
+    capabilities = 'method=opt & samapp'
+    requirement = 'The system shall simulate part of the startup of the coupled NACIE ADP10 SAM and SCM model with one SCM child application.'
+    max_time = 400
+  []
 []
